@@ -52,8 +52,30 @@ There is one small issue in the circuit which is the DEAD ZONE. When the differe
 
 ### Introduction to Charge Pump
 
+The charge pump converts the digital measure of the frequency/phase difference into an analog control signal to control the oscillator. This can done using the current steering circuit.
 
+![image](https://user-images.githubusercontent.com/86144443/127751839-0edc36b5-9086-444b-a55a-76016de65e19.png)
 
+When UP is active the capacitor gets charged, this increases the voltage at charge pump output. When Down is active, the capacitor gets discharged through ground.
+
+![image](https://user-images.githubusercontent.com/86144443/127751898-975aaa0e-6b22-4216-87ea-2e1ad6d4b499.png)
+
+![image](https://user-images.githubusercontent.com/86144443/127751917-225cd908-41e8-4782-845b-153f06d39dea.png)
+
+This output voltage controls the VCO. An increase in voltage speeds up the oscillator, while a reduction in voltage slows down the oscillator.
+
+The circuit for charge pump: 
+![image](https://user-images.githubusercontent.com/86144443/127752240-d13a4302-e06b-493f-be82-8abf06fdf692.png)
+
+If we replace  the output capacitance with a low pass filter, the fluctuations in the output volatge with smoothen out and it will also stabilize the PLL circuit. Without this loop filter, the PLL will not work properly. 
+
+![image](https://user-images.githubusercontent.com/86144443/127752027-86937051-492d-4207-bf42-37df39845afc.png)
+
+For maintaining the stability of PLL, the following considerations must be followed:
+- The value of Cx should be roughly around one tenth of C. 
+- The loop filter bandwidth must be less than one tenth of the highest output frequency desired for the PLL.
+
+The loop filter Bandwidth is 1/(1+RC1) where C1= (C * Cx)/ (C + Cx)
 
 ![image](https://user-images.githubusercontent.com/86144443/127749514-22d2d557-cfb5-4dc7-8601-ef1f77a7f007.png)
 
