@@ -65,6 +65,7 @@ When UP is active the capacitor gets charged, this increases the voltage at char
 This output voltage controls the VCO. An increase in voltage speeds up the oscillator, while a reduction in voltage slows down the oscillator.
 
 The circuit for charge pump: 
+
 ![image](https://user-images.githubusercontent.com/86144443/127752240-d13a4302-e06b-493f-be82-8abf06fdf692.png)
 
 If we replace  the output capacitance with a low pass filter, the fluctuations in the output volatge with smoothen out and it will also stabilize the PLL circuit. Without this loop filter, the PLL will not work properly. 
@@ -77,6 +78,38 @@ For maintaining the stability of PLL, the following considerations must be follo
 
 The loop filter Bandwidth is 1/(1+RC1) where C1= (C * Cx)/ (C + Cx)
 
+### Introduction to VCO and frequency divider
+
+The VCO is a combination of odd number of inverters in series. The period of this oscillator is (2 * delay_of_inverter * inverter_count).
+To control the output frequency we use a 'current-starving' mechanism. Two current sources are used as current supplies at the top and bottom of the ring oscillator.
+Its necessary to design this VCO such that the range of output frequency we want for the PLL is within the range of frequency the VCO can produce properly.
+
+![image](https://user-images.githubusercontent.com/86144443/127752773-53117b53-92dc-4b7d-99b4-af1a0b480ab9.png)
+
+The basic toggle flipflop divides the frequency by 2. 
+
+![image](https://user-images.githubusercontent.com/86144443/127752858-f8f400c7-8f36-4e3a-89ad-e17a2f9d8529.png)
+
+Using three such toggle flip flops we can create a divide by 8 frequency divider.
+
+### Tool Setup and Design flow
+
+#### Tools setup
+Two tools are used in this workshop:
+- *ngspice* for transistor level circuit simulation. For ngspice, sky130 primitive library needs to be downloaded which contains the transistor level information which is required for eunning simulations. Command to run ngspice:
+   *ngspice <circuit_file_name*
+- *magic* for layout design and parasitic extraction. We need technology file for 130nm node. Command:
+  *magic -T <technology_file_from_PDK> <the_layout_file_to_open>
+  
+  #### Development flow
+  - SPICE-level circuit development
+  - Pre-Layout Simulation
+  - Layout Development
+  - Parasitics Extraction
+  - Post Layout Simulation
+  
+  
+  
 ![image](https://user-images.githubusercontent.com/86144443/127749514-22d2d557-cfb5-4dc7-8601-ef1f77a7f007.png)
 
 ![image](https://user-images.githubusercontent.com/86144443/127749572-ed6216af-bbe7-4b07-b991-8f8e1af1ba94.png)
