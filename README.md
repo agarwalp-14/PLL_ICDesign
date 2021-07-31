@@ -108,6 +108,58 @@ Two tools are used in this workshop:
   - Parasitics Extraction
   - Post Layout Simulation
   
+  ### Introduction to PDK, specifications
+  
+  The Process Design Kit(PDK) has different variations of the same gate and contains information like area, power and many other characteristics of the gates. This kit is provided by the fabrication center. We can incorporate all these in our design and then perform simulations.
+  
+  ![image](https://user-images.githubusercontent.com/86144443/127753559-f42a90c1-0623-4f5b-81d7-8a31500364e3.png)
+
+The PDK content:
+- io- input-output
+- pr- primitives (spice)
+- sc- standard cell
+- hd- high density
+- hs- high speed
+- lp- low power
+- hdll- high density low leakage
+
+For the analog design, we will be building things from scratch, hence, we will be using the primitive sky130 library, *sky130_fd_pr*
+
+PLL specifications:
+
+- Corner - 'TT' (Here TT means typical typical. Both the NMOS and PMOS are nominal)
+- Supply voltage - 1.8V
+- Room Temperature
+- VCO mode and PLL mode- The control voltage can be directly given to the VCO, the PLL IC will work as a VCO
+- Input F_min= 5MHz; F_max= 12.5MHz
+- Multiplier- 8x
+- Jitter (RMS) < 20nsec (this is the phase noise specification) 
+- Duty cycle- 50%
+
+The approximate pin placement of the PLL IC:
+
+![image](https://user-images.githubusercontent.com/86144443/127753775-f8fe5c45-d014-4d4b-8e4e-08e9fb1c9713.png)
+
+### Pre-Layout Circuits
+
+The frequency divider:
+
+![image](https://user-images.githubusercontent.com/86144443/127753809-689adf50-4170-4766-a5f1-b0333b3dd899.png)
+
+The Phase Frequency Detector (PFD):
+
+![image](https://user-images.githubusercontent.com/86144443/127753836-1ea18c55-fcbc-48ee-9762-a7abfb7fbd57.png)
+
+This Charge Pump: 
+
+![image](https://user-images.githubusercontent.com/86144443/127753959-39db2347-f646-425e-84b7-d27a031fa6e8.png)
+
+This cicuit tackles the issue of charge leakage when both UP and DOWN signals are off.
+
+The VCO:
+
+![image](https://user-images.githubusercontent.com/86144443/127753979-937300fe-d276-455d-85de-bb3968d28060.png)
+
   
   
 ![image](https://user-images.githubusercontent.com/86144443/127749514-22d2d557-cfb5-4dc7-8601-ef1f77a7f007.png)
