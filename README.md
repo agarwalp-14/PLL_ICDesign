@@ -16,3 +16,10 @@ The entire purpose of the PLL is to design it with the superior spectral purity 
 The intuition of the PLL is to have the same/multiple of the reference frequency and a constant phase difference with it.
 
 ![image](https://user-images.githubusercontent.com/86144443/127729816-7de4a2ef-254b-49e4-904b-5961fa562a8f.png)
+
+The control system block tracks the ouput frequency and synchronizes it with respect to the reference signal.
+
+![IMG-0441](https://user-images.githubusercontent.com/86144443/127730122-f2550cea-5e6e-40cb-8dff-89857e8a0dca.jpg)
+
+The VCO is the on chip oscillator. The PFD takes care of the comparison of the output signal with the reference signal. Charge pump converts the digital comparison that comes from the outputt of the PFD to an analog signal. LPF smoothens the output.
+
