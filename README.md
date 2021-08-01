@@ -22,7 +22,7 @@ This workshop conducted by VSD.
   * [Pre-Layout Circuits](#pre-layout-circuits)
 - [Day 2](#day-2)
   * [Pre-Layout Simulations](#pre-layout-simulations)
-  * [Layouts:](#layouts-)
+  * [Layouts](#layouts-)
   * [Parasitics Extraction](#parasitics-extraction)
   * [Post Layout Simulations](#post-layout-simulations)
   * [Tape-Out](#tape-out)
@@ -250,7 +250,7 @@ The phase difference between two input signals is 6ns which is detected by the P
 Now we will combine all the files to make a PLL circuit.
 
 
- ### Layouts:
+ ### Layouts
  
  Frequency Divider Layout:
  
