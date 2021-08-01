@@ -161,28 +161,43 @@ The VCO:
 ![image](https://user-images.githubusercontent.com/86144443/127753979-937300fe-d276-455d-85de-bb3968d28060.png)
 
  ## Day 2
+ 
  ### Pre-Layout Simulations
  Writing the sub-cicuits and simulating them individually. 
  
+ Frequency Divider:
  
-
-![image](https://user-images.githubusercontent.com/86144443/127749514-22d2d557-cfb5-4dc7-8601-ef1f77a7f007.png)
+ ![image](https://user-images.githubusercontent.com/86144443/127749514-22d2d557-cfb5-4dc7-8601-ef1f77a7f007.png)
+ 
+ The output frequency is half that of the input frequency.
+ 
+ Charge Pump:
 
 ![image](https://user-images.githubusercontent.com/86144443/127749572-ed6216af-bbe7-4b07-b991-8f8e1af1ba94.png)
 
+This is the output when no input is given.
 We can see that the current leakage is very small in the charge pump. The slope of the signal is very small ( 40 * 10^-6)
+
 Now let us give an actual pulse signal and see the response of the charge pump.
 
 ![image](https://user-images.githubusercontent.com/86144443/127749678-69180ad6-e231-470e-93b4-2fdd6a6651a9.png)
 
 The UP and DOWN in the signal is charging and discharging of the capacitor.
+
 The output of the VCO:
 
 ![image](https://user-images.githubusercontent.com/86144443/127749761-fa1c51dd-405e-46b8-878f-a0063757844f.png)
 
+To get full swing at the ring oscillator VCO output an extra inverter is placed at the output, otherwise these oscillations will be of lower and varying amplitude.
+
+Phase Frequency Detector: 
+
 ![image](https://user-images.githubusercontent.com/86144443/127750034-e1043661-11db-46b9-a0e2-8869058a7923.png)
 
+The phase difference between two input signals is 6ns which is detected by the PFD circuit.
+
 Now we will combine all the files to make a PLL circuit.
+
 
  ### Layouts:
  
