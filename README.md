@@ -28,6 +28,14 @@ The control system block tracks the ouput frequency and synchronizes it with res
 
 The VCO is the on chip oscillator. The PFD takes care of the comparison of the output signal with the reference signal. Charge pump converts the digital comparison that comes from the outputt of the PFD to an analog signal. LPF smoothens the output.
 
+Few applications of the PLL are:
+
+a. Clock generation
+
+b. Frequency synthesizer
+
+c. Clock recovery in a serial data link
+
 ### Introduction to Phase Frequency Detector 
 
 This blocks identifies the difference in phase of the reference and the output signal.
@@ -59,7 +67,8 @@ There is one small issue in the circuit which is the DEAD ZONE. When the differe
 
 The charge pump converts the digital measure of the frequency/phase difference into an analog control signal to control the oscillator. This can done using the current steering circuit.
 
-![image](https://user-images.githubusercontent.com/86144443/127751839-0edc36b5-9086-444b-a55a-76016de65e19.png)
+![image](https://user-images.githubusercontent.com/86144443/127783949-e0cf3926-2f63-4523-a11c-0922b0103a1e.png)
+
 
 When UP is active the capacitor gets charged, this increases the voltage at charge pump output. When Down is active, the capacitor gets discharged through ground.
 
@@ -96,6 +105,22 @@ The basic toggle flipflop divides the frequency by 2.
 ![image](https://user-images.githubusercontent.com/86144443/127752858-f8f400c7-8f36-4e3a-89ad-e17a2f9d8529.png)
 
 Using three such toggle flip flops we can create a divide by 8 frequency divider.
+
+### Important terms in PLL
+
+#### Lock Range
+
+It is the range of frequency for which the PLL is able to follow the input frequency. If the frequency of the input signal is falling beyond the PLL lock range then PLL will not be able to lock. Under this condition, VCO frequency jumps to its fundamental free running frequency.
+
+#### Capture Range
+
+The range of input frequencies for which the PLL will capture the input signal is called the capture range. As seen in the figure below, it is narrower compared to the lock range. Once input signal is captured, PLL will remain in locked state and will track the changes in the input signal till it remains within lock range.The loop filter bandwidth has an effect on the capture range.
+
+![image](https://user-images.githubusercontent.com/86144443/127784744-76810842-7f2f-4a2b-b148-db93cf5bf263.png)
+
+#### Settling time
+
+The time within which the PLL is able to lock in from an unlocked condition.
 
 ### Tool Setup and Design flow
 
@@ -234,6 +259,8 @@ Integrated PLL:
 
 ### Parasitics Extraction
 
+The wiring interconnects in the layouts creates parasitic capacitances and resistances. The parasitic extraction is the calculation of these parasitics in the designed devices so that an accurate analog model of the circuit is created. With shrinking nodes, these parasitics hve started making a significant impact on the circuit performance, so it becomes important to incorporate them in our design. 
+
 ![image](https://user-images.githubusercontent.com/86144443/127772225-a44daaae-626a-4a19-a8b6-509f7ab8051f.png)
 
   These simple commands are used to extract the parasitics from the layout. We extract the parasitics to a spice file using command *ext2spice*
@@ -296,4 +323,14 @@ Orange: Charge Pump Output Voltage
 Red: Up Signal
 Blue: Down Signal
 Leakage: < 0.05V in 100us
+
+We combine all the instances of the layout on magic and extract parasitics and perform simulations for one last time. On getting the desired result we write the entire layout to a GDS(Graphic Data System) file. GDS file contains the information like geometric shapes and text labels about the layout in binary format.
+
+### Tape-Out
+
+Tape-out is the process of sending the final designs to foundry for undergoing the fabrication process. The Silicon wafer needs to be connected to the external world. For this we use a SoC which has other IPs which will help in making our design user-ready. 
+
+![image](https://user-images.githubusercontent.com/86144443/127784513-0dd83271-4608-4792-80f9-c4119cad6b02.png)
+
+This is the Efabless Caravel Soc template. We can add our design in the user area. All other needs like serial connectivity, memory and testing mechanisms will be taken care by the SoC.
 
