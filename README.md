@@ -28,8 +28,6 @@ This workshop conducted by VSD.
   * [Tape-Out](#tape-out)
 - [Acknowledgements](#acknowledgements)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 ## Day1: PLL Theory and Lab Setup
 
 ### Introduction to Phase Locked Loop(PLL)
