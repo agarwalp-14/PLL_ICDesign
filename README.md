@@ -160,9 +160,12 @@ The VCO:
 
 ![image](https://user-images.githubusercontent.com/86144443/127753979-937300fe-d276-455d-85de-bb3968d28060.png)
 
- ## Day 2: PLL Labs and post layout simulations:
+ ## Day 2
+ ### Pre-Layout Simulations
+ Writing the sub-cicuits and simulating them individually. 
  
  
+
 ![image](https://user-images.githubusercontent.com/86144443/127749514-22d2d557-cfb5-4dc7-8601-ef1f77a7f007.png)
 
 ![image](https://user-images.githubusercontent.com/86144443/127749572-ed6216af-bbe7-4b07-b991-8f8e1af1ba94.png)
@@ -180,3 +183,27 @@ The output of the VCO:
 ![image](https://user-images.githubusercontent.com/86144443/127750034-e1043661-11db-46b9-a0e2-8869058a7923.png)
 
 Now we will combine all the files to make a PLL circuit.
+
+ ### Layouts:
+ 
+ Frequency Divider Layout:
+ 
+ ![image](https://user-images.githubusercontent.com/86144443/127769545-64b9adcc-ede3-4180-b833-137ee55d7cf8.png)
+
+PFD Layout:
+
+![image](https://user-images.githubusercontent.com/86144443/127769690-9adf6752-e054-4a38-a291-4a75d841bfab.png)
+
+
+VCO Layout:
+
+![image](https://user-images.githubusercontent.com/86144443/127769727-33ac83dd-9361-46f6-8fd2-f2080d0e02eb.png)
+
+Charge Pump Layout:
+
+![image](https://user-images.githubusercontent.com/86144443/127769733-7a07aaae-7ab9-4f09-93a7-c3aed896f13f.png)
+
+MUX Layout:
+
+![image](https://user-images.githubusercontent.com/86144443/127769766-e30ab7af-dc7f-456a-81fd-f29bb0a8128c.png)
+
