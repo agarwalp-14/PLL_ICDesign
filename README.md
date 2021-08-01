@@ -222,3 +222,27 @@ MUX Layout:
 
 ![image](https://user-images.githubusercontent.com/86144443/127769766-e30ab7af-dc7f-456a-81fd-f29bb0a8128c.png)
 
+Integrated PLL:
+
+![image](https://user-images.githubusercontent.com/86144443/127771231-1d48b10a-e8ba-4e2a-85f7-fc6ae3db068d.png)
+
+
+### Parasitics Extraction
+
+![image](https://user-images.githubusercontent.com/86144443/127772225-a44daaae-626a-4a19-a8b6-509f7ab8051f.png)
+
+  These simple commands are used to extract the parasitics from the layout.
+  Here we mention rthresh and cthresh ass 0 because we want to extract all the resistive and capacitive parasitics that are greater than 0.
+  
+  ![image](https://user-images.githubusercontent.com/86144443/127772419-ccd716dc-5828-491b-a815-b75be4ede581.png)
+
+  On viewing PFD.spice, we can notice that there are additional capacitances extracted by the capacitor. Total 46 additional capacitances are there for PFD layout.
+  
+  On extracting parasitics for FD.mag, we observe a total 43 parasitic capacitance with the largest capacitance being C35 with the value of 3.76fF between Vdd and GND.
+  
+  ![image](https://user-images.githubusercontent.com/86144443/127772577-c593d167-b1a1-4e00-a04c-faa81470ec9e.png)
+
+  
+  
+
+
