@@ -6,6 +6,29 @@ This workshop conducted by VSD.
 
 ## Table of Content
 
+- [Day1: PLL Theory and Lab Setup](#day1--pll-theory-and-lab-setup)
+  * [Introduction to Phase Locked Loop(PLL)](#introduction-to-phase-locked-loop-pll-)
+  * [Introduction to Phase Frequency Detector](#introduction-to-phase-frequency-detector)
+  * [Introduction to Charge Pump](#introduction-to-charge-pump)
+  * [Introduction to VCO and frequency divider](#introduction-to-vco-and-frequency-divider)
+  * [Important terms in PLL](#important-terms-in-pll)
+    + [Lock Range](#lock-range)
+    + [Capture Range](#capture-range)
+    + [Settling time](#settling-time)
+  * [Tool Setup and Design flow](#tool-setup-and-design-flow)
+    + [Tools setup](#tools-setup)
+    + [Development flow](#development-flow)
+  * [Introduction to PDK, specifications](#introduction-to-pdk--specifications)
+  * [Pre-Layout Circuits](#pre-layout-circuits)
+- [Day 2](#day-2)
+  * [Pre-Layout Simulations](#pre-layout-simulations)
+  * [Layouts:](#layouts-)
+  * [Parasitics Extraction](#parasitics-extraction)
+  * [Post Layout Simulations](#post-layout-simulations)
+  * [Tape-Out](#tape-out)
+- [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Day1: PLL Theory and Lab Setup
 
@@ -333,4 +356,9 @@ Tape-out is the process of sending the final designs to foundry for undergoing t
 ![image](https://user-images.githubusercontent.com/86144443/127784513-0dd83271-4608-4792-80f9-c4119cad6b02.png)
 
 This is the Efabless Caravel Soc template. We can add our design in the user area. All other needs like serial connectivity, memory and testing mechanisms will be taken care by the SoC.
+
+## Acknowledgements
+ - Kunal Ghosh (co-founder VSD Corp. Pvt Ltd) 
+ - Lakshmi S
+ - https://github.com/lakshmi-sathi/avsdpll_1v8
 
