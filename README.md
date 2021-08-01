@@ -32,14 +32,14 @@ The VCO is the on chip oscillator. The PFD takes care of the comparison of the o
 
 This blocks identifies the difference in phase of the reference and the output signal.
 
-![image](https://user-images.githubusercontent.com/86144443/127751334-881b399e-e059-4451-a7eb-ecd48e37e4ff.png)
+![image](https://user-images.githubusercontent.com/86144443/127783895-4b166b76-e9c8-47ea-8baa-7fc51ae06e52.png)
+
 
 When falling edge of OUT signal is detected, DOWN stays active till the falling edge of REF signal.
 When the falling edge of REF is detected, UP stays high till falling edge of OUT signal.
 
 Now this functionality is applied to output signal with different frequencies.
 
-![image](https://user-images.githubusercontent.com/86144443/127751509-02503a92-57b0-4368-b764-6e2827194003.png)
 
 This functionality also captures the frequency difference between the signals. When the OUT frequency is higher, DOWN signal gets activated which says to slow down the output. When the OUT frequency is lower, the UP signal gets activated which suggests to speed up the input.
 
