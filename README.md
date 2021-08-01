@@ -1,6 +1,11 @@
-# PLL_ICDesign
+# Phase Locked Loop (PLL) Design using SKY130nm Technology
 
 This workshop conducted by VSD.
+
+![image](https://user-images.githubusercontent.com/86144443/127776224-7ba1be48-e42c-469a-a4ed-52e06af6d84b.png)
+
+## Table of Content
+
 
 ## Day1: PLL Theory and Lab Setup
 
@@ -231,7 +236,7 @@ Integrated PLL:
 
 ![image](https://user-images.githubusercontent.com/86144443/127772225-a44daaae-626a-4a19-a8b6-509f7ab8051f.png)
 
-  These simple commands are used to extract the parasitics from the layout.
+  These simple commands are used to extract the parasitics from the layout. We extract the parasitics to a spice file using command *ext2spice*
   Here we mention rthresh and cthresh ass 0 because we want to extract all the resistive and capacitive parasitics that are greater than 0.
   
   ![image](https://user-images.githubusercontent.com/86144443/127772419-ccd716dc-5828-491b-a815-b75be4ede581.png)
@@ -242,7 +247,53 @@ Integrated PLL:
   
   ![image](https://user-images.githubusercontent.com/86144443/127772577-c593d167-b1a1-4e00-a04c-faa81470ec9e.png)
 
-  
-  
+### Post Layout Simulations
 
+Phase Frequency Detector:
+
+![image](https://user-images.githubusercontent.com/86144443/127776113-e32df8e4-a33c-41f4-bd12-b87a0a60e938.png)
+
+
+![image](https://user-images.githubusercontent.com/86144443/127776068-08d9d94c-d7b1-4650-b87e-fd1a56934aa1.png)
+
+![image](https://user-images.githubusercontent.com/86144443/127776521-f9d99ff3-dfb8-4e34-8870-f8689cec3229.png)
+
+Red: Clock 1
+
+Blue: Clock 2
+
+Orange: Up Signal
+
+Green: Down Signal
+
+Charge Pump:
+
+Response to *Up* signal:
+
+![image](https://user-images.githubusercontent.com/86144443/127780380-e63bdd35-f13c-40ab-b944-217a46c64a88.png)
+
+Orange: Charge Pump Output Voltage
+
+Red: Up Signal
+
+Blue: Down Signal
+
+Response to *Down* signal:
+
+![image](https://user-images.githubusercontent.com/86144443/127780429-218aafbe-c1bf-4790-9f72-c4a6983fe367.png)
+
+Orange: Charge Pump Output Voltage
+
+Red: Up Signal
+
+Blue: Down Signal
+  
+Response due to charge leakage: 
+
+![image](https://user-images.githubusercontent.com/86144443/127780584-872f2d45-5a1f-473b-b064-dfb6bd7c6ecf.png)
+
+Orange: Charge Pump Output Voltage
+Red: Up Signal
+Blue: Down Signal
+Leakage: < 0.05V in 100us
 
