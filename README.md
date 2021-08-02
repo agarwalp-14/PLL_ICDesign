@@ -2,7 +2,8 @@
 
 This workshop was conducted by VSD from 31st July 2021 to 1st August 2021.
 
-![image](https://user-images.githubusercontent.com/86144443/127776224-7ba1be48-e42c-469a-a4ed-52e06af6d84b.png)
+![image](https://user-images.githubusercontent.com/86144443/127809920-98825f4e-8b41-4286-9493-2296e2fb412f.png)
+
 
 ## Table of Content
 
