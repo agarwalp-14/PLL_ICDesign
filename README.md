@@ -204,7 +204,8 @@ The Phase Frequency Detector (PFD):
 
 This Charge Pump: 
 
-![image](https://user-images.githubusercontent.com/86144443/127753959-39db2347-f646-425e-84b7-d27a031fa6e8.png)
+![IMG-0460](https://user-images.githubusercontent.com/86144443/144002263-56928000-afca-41e2-a317-a0bf57870f2e.jpg)
+
 
 This cicuit tackles the issue of charge leakage when both UP and DOWN signals are off.
 
